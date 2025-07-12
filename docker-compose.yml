@@ -9,10 +9,9 @@ services:
     container_name: laravel-app
     restart: unless-stopped
     working_dir: /var/www
-    entrypoint: ["/var/www/docker/php/entrypoint.sh"]
+    entrypoint: ["/usr/local/bin/entrypoint.sh"]
     volumes:
       - ./:/var/www
-      - ./docker/php/entrypoint.sh:/var/www/docker/php/entrypoint.sh
     networks:
       - laravel
     depends_on:
@@ -53,4 +52,4 @@ networks:
     driver: bridge
 
 volumes:
-  dbdata: 
+  dbdata:
